@@ -34,3 +34,78 @@ The communication is established via a **TCP connection** secured by **SSL/TLS**
 
 User data is stored in a simple text-based database (`users.txt`) with the following structure:
 
+
+Where:
+- `username` → the user's login name  
+- `encrypted_password` → stored as a **SHA256 hash**  
+- `status` → `0` if the user is logged out, `1` if logged in  
+
+This lightweight system mimics basic database behavior for user authentication.
+
+---
+
+## 🔒 **SSL/TLS Configuration**
+
+To ensure secure communication, an **SSL context** is configured using **OpenSSL**.  
+The server loads a **certificate** and a **private key**, while the client establishes a **secure encrypted session**.
+
+**Main steps:**
+1. Initialize SSL context → `SSL_CTX_new()`
+2. Load certificates → `SSL_CTX_use_certificate_file()` and `SSL_CTX_use_PrivateKey_file()`
+3. Accept or connect with encryption → `SSL_accept()` and `SSL_connect()`
+
+All transmitted data — such as **user credentials**, **commands**, and **results** — is encrypted end-to-end.
+
+---
+
+## 🧵 **Sockets and Multithreading**
+
+The server uses **two types of sockets**:
+
+| Socket Type | Purpose |
+|--------------|----------|
+| Listening Socket | Waits for new incoming client connections |
+| Client Socket | Created per accepted client connection for dedicated communication |
+
+Each client connection is handled in a **separate thread**, ensuring **parallel execution** and **non-blocking communication**.
+
+---
+
+## 🧰 **Implemented Commands**
+
+| Command | Description |
+|----------|-------------|
+| `register` | Registers a new user |
+| `login` | Authenticates an existing user |
+| `logout` | Logs out the current user |
+| `cd <folder>` | Changes the current directory (if allowed) |
+| `pwd` | Displays the current working directory |
+| `quit` | Ends the current session |
+| Any Linux command | Executed on the server via `popen()`; output is sent back to the client |
+
+---
+
+## 🧮 **Core Technologies**
+
+- 🧠 **C Programming Language**
+- 🌐 **TCP/IP Networking**
+- 🧵 **Multithreading (pthread)**
+- 🔐 **SSL/TLS (OpenSSL)**
+- 🧾 **File-based User Storage**
+- ⚙️ **System Command Execution (`popen`)**
+- 🔁 **SHA256 Hashing**
+
+---
+
+## 🛠️ **Compilation and Execution**
+
+### 🖥️ Compile and run the **Server**
+```bash
+gcc server.c -o server -lssl -lcrypto -lpthread
+./server
+
+
+### 💻 Compile and run the **Client**
+```bash
+gcc client.c -o client -lssl -lcrypto
+./client
