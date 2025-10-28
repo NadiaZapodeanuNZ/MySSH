@@ -6,7 +6,7 @@ The system is based on a client-server architecture, where the client is able to
 The server receives these commands, executes them, and returns the results to the client.
 </p>
 
-![TCP Client-Server Diagram](https://upload.wikimedia.org/wikipedia/commons/3/3a/Client-server-model.svg)
+![TCP Client-Server Diagram](https://www.researchgate.net/publication/349147426/figure/fig12/AS:989602185744386@1612950955194/Simplified-diagram-of-TCP-IP-based-socket-communication-Adapted-from-18.ppm)
 
 ---
 
