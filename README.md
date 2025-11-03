@@ -149,8 +149,10 @@ MySSH/
 7.Client displays results in terminal
 ```
 
+
+## 🌐 TCP Client-Server Visualization
+
 ```
-🌐 TCP Client-Server Visualization
         +-------------------------+
         |         CLIENT          |
         |-------------------------|
