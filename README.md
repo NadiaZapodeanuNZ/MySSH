@@ -99,7 +99,7 @@ Each client connection is handled in a **separate thread**, ensuring **parallel 
 
 ## 🛠️ **Compilation and Execution**
 
-```markdown
+
 
 🖥️ Compile and run the Server
 
@@ -113,5 +113,4 @@ gcc server.c -o server -lssl -lcrypto -lpthread
 ```bash
 gcc client.c -o client -lssl -lcrypto
 ./client
-```
 ```
