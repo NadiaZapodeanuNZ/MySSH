@@ -125,7 +125,9 @@ sudo apt install build-essential libssl-dev -y
 ```
 
 
-📂 Project Structure
+## 📂 Project Structure
+
+```text
 MySSH/
 ├── server.c
 ├── client.c
@@ -135,22 +137,17 @@ MySSH/
 │   └── server.key
 └── README.md
 
-🧭 How It Works (Step by Step)
+## 🧭 How It Works (Step by Step)
 
-Server starts and loads SSL context & certificates
+1.Server starts and loads SSL context & certificates
+2.Client connects via TCP → SSL handshake is established
+3.SSL/TLS layer secures the connection
+4.User authentication (login / register)
+5.Commands are sent and executed securely
+6.Server sends encrypted results back
+7.Client displays results in terminal
 
-Client connects via TCP → SSL handshake is established
-
-SSL/TLS layer secures the connection
-
-User authentication (login / register)
-
-Commands are sent and executed securely
-
-Server sends encrypted results back
-
-Client displays results in terminal
-
+'''
 🌐 TCP Client-Server Visualization
         +-------------------------+
         |         CLIENT          |
@@ -168,3 +165,4 @@ Client displays results in terminal
         | Execute Command (popen) |
         | Send Output via SSL     |
         +-------------------------+
+'''
