@@ -170,3 +170,17 @@ MySSH/
         | Send Output via SSL     |
         +-------------------------+
 ```
+
+## 📝 What I Learned
+
+Working on **MySSH** helped me understand and practice several important concepts in networking and system programming:
+
+- **TCP/IP and Sockets:** I learned how data is transmitted over TCP, how a client and server establish a connection, and how to manage multiple clients at the same time.  
+- **SSH and Secure Communication:** I gained practical knowledge of how secure communication works, including authentication, encryption, and secure command transmission.  
+- **SSL/TLS Encryption:** Using OpenSSL, I learned how to encrypt data between client and server, set up certificates, and protect sensitive information like passwords.  
+- **Debugging and Problem Solving:** Handling compilation errors, SSL configuration issues, and multithreading bugs improved my debugging skills and my understanding of how programs execute.  
+- **Command Execution in C:** Using `popen()`, I learned how to safely execute system commands from a program and handle their output.  
+- **File-based Data Storage:** Managing user accounts in a text file taught me basic data handling and simple ways to mimic database behavior.  
+- **Programming Practices:** I improved my skills with pointers, memory management, modular code, and clean coding practices in C.
+
+This project gave me a solid understanding of **how SSH works, how secure client-server systems are built**, and strengthened my **hands-on skills in C and network programming**.
