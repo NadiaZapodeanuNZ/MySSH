@@ -136,9 +136,10 @@ MySSH/
 │   ├── server.crt
 │   └── server.key
 └── README.md
+```
 
 ## 🧭 How It Works (Step by Step)
-
+```
 1.Server starts and loads SSL context & certificates
 2.Client connects via TCP → SSL handshake is established
 3.SSL/TLS layer secures the connection
@@ -146,8 +147,9 @@ MySSH/
 5.Commands are sent and executed securely
 6.Server sends encrypted results back
 7.Client displays results in terminal
+```
 
-'''
+```
 🌐 TCP Client-Server Visualization
         +-------------------------+
         |         CLIENT          |
@@ -165,4 +167,4 @@ MySSH/
         | Execute Command (popen) |
         | Send Output via SSL     |
         +-------------------------+
-'''
+```
