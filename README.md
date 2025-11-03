@@ -114,3 +114,57 @@ gcc server.c -o server -lssl -lcrypto -lpthread
 gcc client.c -o client -lssl -lcrypto
 ./client
 ```
+
+## 📦 Dependencies
+
+Before running, make sure the following packages are installed:
+
+```bash
+sudo apt update
+sudo apt install build-essential libssl-dev -y
+```
+
+
+📂 Project Structure
+MySSH/
+├── server.c
+├── client.c
+├── users.txt
+├── certs/
+│   ├── server.crt
+│   └── server.key
+└── README.md
+
+🧭 How It Works (Step by Step)
+
+Server starts and loads SSL context & certificates
+
+Client connects via TCP → SSL handshake is established
+
+SSL/TLS layer secures the connection
+
+User authentication (login / register)
+
+Commands are sent and executed securely
+
+Server sends encrypted results back
+
+Client displays results in terminal
+
+🌐 TCP Client-Server Visualization
+        +-------------------------+
+        |         CLIENT          |
+        |-------------------------|
+        |  Input Command (login)  |
+        |  Send to Server via SSL |
+        +-----------+-------------+
+                    |
+                TCP/SSL
+                    |
+        +-----------v-------------+
+        |         SERVER          |
+        |-------------------------|
+        | Validate Credentials    |
+        | Execute Command (popen) |
+        | Send Output via SSL     |
+        +-------------------------+
